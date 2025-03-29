@@ -6,8 +6,8 @@ function Start()
 end
 function OnRoundStarted()
     wait(1.5)
-    newRoundNumber = game.roundNumber - 80
-    gameInsectHealthBonus = Math.floor((newRoundNumber - 5) / 10)
+    newRoundNumber = game.roundNumber + 80
+    gameInsectHealthBonus = Math.floor((game.roundNumber - 5) / 10)
     if (newRoundNumber % 30 == 0) then
         clone = game.SpawnCockroach()
         clone.speed = 2
@@ -34,7 +34,7 @@ function OnRoundStarted()
             wait(5)
         end
     else
-        for a=1,3,1 do
+        for a=1,5,1 do
             presetNumber = Random.RandomIntBetween(0, 6)
 
             if (newRoundNumber >= 40) then
